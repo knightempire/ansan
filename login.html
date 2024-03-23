@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel="stylesheet" type="text/css" href="login.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images\LOGO FINAL - TRANS BACKGROUND (1).png" type="image/png">
+
+    <title>ANSAN-login</title>
+</head>
+<body>   
+	<img class="wave" src="images/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="images/LOGO FINAL - TRANS BACKGROUND (1).png"  style="margin-right: 100px;margin-top: 100px;">
+		</div>
+		<div class="login-content">
+			<form action="email.html" > 
+				<!-- online need to add to call api -->
+
+				<img src="images/avatar.svg">
+				<h2 class="title" style="color:  #dc91e5;">Welcome</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>e-mail</h5>
+           		   		<input type="email" class="input" id="user">
+           		   </div>
+           		</div>
+           		<div >           		 
+            	</div>
+				
+            	<!-- <a href="#"><center>If you dont have an account ,<strong style="color: rgb(112, 125, 212);">sign up</strong></center> </a> -->
+            <div class="register"> 
+                <h5>If you don't have an account ?
+    <a href="report/patient form.html" >  register here </a>  </h5>
+            </div>
+            	<input type="submit" class="btn" value="Login">
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/login.js"></script>
+</body>
+</html>
+
+
+<script>
+	function call(){ 
+		a = document.getElementById("user").value 
+	// main.js
+  
+  // POST request using fetch()
+  fetch("https://ansan.cb.amrita.edu/api/login", {
+	  
+	  // Adding method type
+	  method: "POST",
+	  
+	  // Adding body or contents to send
+	  body: JSON.stringify({
+		  userEmail : a
+	  }),
+	  
+	  // Adding headers to the request
+	  headers: {
+		  "Content-type": "application/json; charset=UTF-8",
+		//   "Authorization": `Bearer ${}`
+	  }
+  })
+  
+  // Converting to JSON
+  .then(response => response.json())
+  
+  // Displaying results to console
+  .then(json => console.log(json));
+}
+  </script>

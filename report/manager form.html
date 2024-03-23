@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Form</title>
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Manager</h1>
+        <p>Please fill the form</p>
+       <!-- ... rest of your HTML above ... -->
+
+<form id="managerForm">
+    <div class="row">
+        <div class="column">
+            <label for="manager_id">Manager_id</label>
+            <input type="text" id="manager_id" name="manager_id" placeholder="Your ID here" required>
+        </div>
+        <div class="column">
+            <label for="manager_name">Manager_name</label>
+            <input type="text" id="manager_name" name="manager_name" placeholder="Your Name here" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email here" required>
+        </div>
+        <div class="column">
+            <label for="manager_number">Manager_Number</label>
+            <input type="tel" id="manager_number" name="manager_number" placeholder="Your phone number here" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject" required>
+                <option value="">Select a subject</option>
+                <option value="inquiry">Inquiry</option>
+                <option value="support">Support</option>
+                <option value="feedback">Feedback</option>
+                <option value="complaint">Complaint</option>
+                <!-- Add more options here as needed -->
+            </select>
+        </div>
+        <div class="column">
+            <label for="office_name">Office name</label>
+            <input type="text" id="office_name" name="office_name" placeholder="Your Office name here" required>
+        </div>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+
+<!-- ... rest of your HTML below ... -->
+<!-- ... rest of your HTML above ... -->
+
+<script>
+    document.getElementById('managerForm').addEventListener('submit', function(event) {
+        // Perform validation checks here if needed.
+        // If any field does not validate, you can call event.preventDefault() to stop the form submission
+        // Example validation: Check if the manager ID is a specific format
+        var managerId = document.getElementById('manager_id').value;
+        if (!/^[A-Z0-9]{4,}$/.test(managerId)) {
+            alert('Manager ID must be at least 4 characters long and contain only uppercase letters and numbers.');
+            event.preventDefault(); // Stop form submission
+        }
+    });
+</script>
+
+<!-- ... rest of your HTML below ... -->
+
+    </div>
+</body>
+</html>
+
+<style>
+
+
+label{
+    color: #6f6df4;
+}
+/* Existing styles ... */
+
+textarea,
+input,
+select { /* Added 'select' to the existing rule */
+    width: 100%;
+    font-weight: 400;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1.2px solid #c4cae0;
+    margin-top: 5px;
+}
+
+/* More styles ... */
+
+
+textarea:focus,
+input:focus,
+select:focus { /* Added 'select:focus' to the existing rule */
+    outline: none;
+    border-color: #6f6df4;
+}
+
+/* More styles ... */
+
+
+
+    *,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+    font-weight: 500;
+}
+
+.container{
+    background-color:#e4e2e7;
+    width: 70%;
+    min-width: 420px;
+    padding: 35px 50px;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 10px;
+    box-shadow: 20px 30px 25px rgba(0,0,0,0.15);
+}
+h1{
+    font-size: 30px;
+    text-align: center;
+    color: #5a25b6;
+}
+p{
+    position: relative;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    color: #606060;
+    font-size: 14px;
+    font-weight: 400;
+}
+form{
+    width: 100%;
+    position: relative;
+    margin: 30px auto 0 auto;
+}
+.row{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    grid-gap: 20px 30px;
+    margin-bottom: 20px;
+}
+label{
+    color: #9971d4;
+    font-size: 14px;
+}
+textarea,
+input{
+    width: 100%;
+    font-weight: 400;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1.2px solid #c4cae0;
+    margin-top: 5px;
+}
+textarea{
+    resize: none;
+}
+textarea:focus,
+input:focus{
+    outline: none;
+    border-color: #6f6df4;
+}
+button{
+    border: none;
+    padding: 10px 20px;
+    background: linear-gradient(
+        130deg,
+        #6f6df4,
+        #4c46f5
+    );
+    color: #ffffff;
+    border-radius: 3px;
+}
+</style>

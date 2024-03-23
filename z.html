@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"> <!-- Bootstrap 5.x -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css'>
+  <link rel="stylesheet" href="styles.css">
+  <title>Responsive Navbar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .navbar {
+      background-color: #f5f2f2;
+      color: #141414;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      margin-left: auto;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    .nav-links li {
+      margin-right: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #222121;
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .nav-links a:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #00bcd4;
+      bottom: -5px;
+      left: 0;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.3s ease;
+    }
+
+    .dropdown-content {
+      padding: 15px;
+      display: none;
+      position: absolute;
+      background-color: #f4f0f0;
+      min-width: 120px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    }
+
+    .dropdown-content a {
+      color: #212020;
+      padding: 10px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown .arrow-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    /* Logo styling */
+    .logo {
+      display: flex;
+      align-items: center;
+      color: #141414;
+      text-decoration: none;
+    }
+
+    /* Increase the size of the logo image */
+    .logo img {
+      width: 80px;
+      height: 60px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+   
+<nav class="navbar">
+    <div class="logo"><img src="https://i.imgur.com/vOre2pH.png" alt="logo" style="margin-left: 20px;"></div>
+    <ul class="nav-links">
+        <li class="dropdown">
+          <button class="arrow-button" onclick="toggleDropdown(this)">
+            <strong style="font-size: larger;"> User </strong>
+            <i class="arrow-icon fas fa-caret-down"></i> <!-- Add an arrow icon here -->
+          </button>
+          <div class="dropdown-content">
+            <a href="profile.html">Profile</a>
+            <a href="index.html"> Log_out</a>
+          </div>
+        </li>
+    </ul>
+</nav>
+
+
+
+<div class="container">
+    <div class="card green">
+      <div class="additional">
+        <div class="user-card">
+          <div class="level center">Report_id</div>
+          <div class="points center">Timestamp</div>
+          <!-- SVG replaced with an image -->
+          <img src="https://i.imgur.com/aWknMb5.jpg" alt="Teacher" class="center" style="width:110px;height:110px;">
+        </div>
+        <div class="more-info">
+          <h1 id="Patient_name">Patient_name</h1><br>
+          <div class="coords">
+            <span><strong> Doctor_id</strong></span>
+            <span>#doctor_id</span>
+          </div>
+          <div class="coords">
+            <span><strong>Discription</strong></span>
+            <span>He need to wear glass</span>
+          </div><br>
+          <div class="coords">
+            <span><strong>view Left_eye</strong></span>
+            <span><strong> View Right_eye</strong></span>
+          </div>
+          <div class="coords">
+            <span><a href="#"><i class="bi bi-eye-fill" style="font-size: x-large;"></i></a></span>
+            <span><a href="#"><i class="bi bi-eye-fill" style="font-size: x-large;"></i></a></span>
+          </div>
+          <div class="stats">
+            <div>
+              <div class="title">Email<br>report</div>
+              <a href="#"><i class="bi bi-envelope-fill"></i></a>
+            </div>
+            <div>
+              <div class="title">Custom<br>report</div>
+              <a href="#"><i class="bi bi-gear-fill"></i></a>
+            </div>
+            <div>
+              <div class="title">Download<br>report</div>
+              <a href="#"><i class="bi bi-download"></i></a>
+            </div>
+            <div>
+              <div class="title">Add_new<br>Test</div>
+              <a href="#"><i class="bi bi-journal-medical"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="general">
+          <h1 id="Patient_name">Patient_name</h1>
+        <p>
+          <center>
+            <table>
+              <tr>
+                <th>Left_eye:</th>
+                <td>+1.00</td>
+              </tr><br>
+              <tr>
+                <th>Right_eye:</th>
+                <td>+1.00</td>
+              </tr>
+            </table>
+          </center>
+        </p>
+        <span class="more">Mouse over the card for more info</span>
+      </div>
+    </div>
+    <div class="card green">
+        <div class="additional">
+          <div class="user-card">
+            <div class="level center">Report_id</div>
+            <div class="points center">Timestamp</div>
+            <!-- SVG replaced with an image -->
+            <img src="https://i.imgur.com/aWknMb5.jpg" alt="Teacher" class="center" style="width:110px;height:110px;">
+          </div>
+          <div class="more-info">
+            <h1 id="Patient_name">Patient_name</h1><br>
+            <div class="coords">
+              <span><strong> Doctor_id</strong></span>
+              <span>#doctor_id</span>
+            </div>
+            <div class="coords">
+              <span><strong>Discription</strong></span>
+              <span>He need to wear glass</span>
+            </div><br>
+            <div class="coords">
+              <span><strong>view Left_eye</strong></span>
+              <span><strong> View Right_eye</strong></span>
+            </div>
+            <div class="coords">
+              <span><a href="#"><i class="bi bi-eye-fill" style="font-size: x-large;"></i></a></span>
+              <span><a href="#"><i class="bi bi-eye-fill" style="font-size: x-large;"></i></a></span>
+            </div>
+            <div class="stats">
+              <div>
+                <div class="title">Email<br>report</div>
+                <a href="#"><i class="bi bi-envelope-fill"></i></a>
+              </div>
+              <div>
+                <div class="title">Custom<br>report</div>
+                <a href="#"><i class="bi bi-gear-fill"></i></a>
+              </div>
+              <div>
+                <div class="title">Download<br>report</div>
+                <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div>
+                <div class="title">Add_new<br>Test</div>
+                <a href="#"><i class="bi bi-journal-medical"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="general">
+            <h1 id="Patient_name">Patient_name</h1>
+          <p>
+            <center>
+              <table>
+                <tr>
+                  <th>Left_eye:</th>
+                  <td>+1.00</td>
+                </tr><br>
+                <tr>
+                  <th>Right_eye:</th>
+                  <td>+1.00</td>
+                </tr>
+              </table>
+            </center>
+          </p>
+          <span class="more">Mouse over the card for more info</span>
+        </div>
+      </div>
+
+    <div class="card green">
+      <div class="additional">
+        <div class="user-card">
+          <div class="level center">Report_id</div>
+          <div class="points center">Timestamp</div>
+          <!-- SVG replaced with an image -->
+          <img src="https://i.imgur.com/aWknMb5.jpg" alt="Teacher" class="center" style="width:110px;height:110px;">
+        </div>
+        <div class="more-info">
+          <h1 id="Patient_name">Patient_name</h1><br>
+          <div class="coords">
+            <span><strong> Doctor_id</strong></span>
+            <span>#doctor_id</span>
+          </div>
+          <div class="coords">
+            <span><strong>Discription</strong></span>
+            <span>He need to wear glass</span>
+          </div><br>
+          <div class="coords">
+            <span><strong>view Left_eye</strong></span>
+            <span><strong> View Right_eye</strong></span>
+          </div>
+          <div class="coords">
+            <span><a href="#"><i class="bi bi-eye-fill" style="font-size: x-large;"></i></a></span>
+            <span><a href="#"><i class="bi bi-eye-fill" style="font-size: x-large;"></i></a></span>
+          </div>
+          <div class="stats">
+            <div>
+              <div class="title">Email<br>report</div>
+              <a href="#"><i class="bi bi-envelope-fill"></i></a>
+            </div>
+            <div>
+              <div class="title">Custom<br>report</div>
+              <a href="#"><i class="bi bi-gear-fill"></i></a>
+            </div>
+            <div>
+              <div class="title">Download<br>report</div>
+              <a href="#"><i class="bi bi-download"></i></a>
+            </div>
+            <div>
+              <div class="title">Add_new<br>Test</div>
+              <a href="#"><i class="bi bi-journal-medical"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="general">
+          <h1 id="Patient_name">Patient_name</h1>
+        <p>
+          <center>
+            <table>
+              <tr>
+                <th>Left_eye:</th>
+                <td>+1.00</td>
+              </tr><br>
+              <tr>
+                <th>Right_eye:</th>
+                <td>+1.00</td>
+              </tr>
+            </table>
+          </center>
+        </p>
+        <span class="more">Mouse over the card for more info</span>
+      </div>
+    </div>
+
+
+    <div class="card green">
+      <div class="additional">
+        <div class="user-card">
+          <div class="level center">Report_id</div>
+          <div class="points center">Timestamp</div>
+          <!-- SVG replaced with an image -->
+          <img src="https://i.imgur.com/aWknMb5.jpg" alt="Teacher" class="center" style="width:110px;height:110px;">
+        </div>
+        <div class="more-info">
+          <h1 id="Patient_name">Patient_name</h1><br>
+          <div class="coords">
+            <span><strong> Doctor_id</strong></span>
+            <span>#doctor_id</span>
+          </div>
+          <div class="coords">
+            <span><strong>Discription</strong></span>
+            <span>He need to wear glass</span>
+          </div><br>
+          <div class="coords">
+            <span><strong>view Left_eye</strong></span>
+            <span><strong> View Right_eye</strong></span>
+          </div>
+          <div class="coords">
+            <span><a href="#"><i class="bi bi-eye-fill" style="font-size: x-large;"></i></a></span>
+            <span><a href="#"><i class="bi bi-eye-fill" style="font-size: x-large;"></i></a></span>
+          </div>
+          <div class="stats">
+            <div>
+              <div class="title">Email<br>report</div>
+              <a href="#"><i class="bi bi-envelope-fill"></i></a>
+            </div>
+            <div>
+              <div class="title">Custom<br>report</div>
+              <a href="#"><i class="bi bi-gear-fill"></i></a>
+            </div>
+            <div>
+              <div class="title">Download<br>report</div>
+              <a href="#"><i class="bi bi-download"></i></a>
+            </div>
+            <div>
+              <div class="title">Add_new<br>Test</div>
+              <a href="#"><i class="bi bi-journal-medical"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="general">
+          <h1 id="Patient_name">Patient_name</h1>
+        <p>
+          <center>
+            <table>
+              <tr>
+                <th>Left_eye:</th>
+                <td>+1.00</td>
+              </tr><br>
+              <tr>
+                <th>Right_eye:</th>
+                <td>+1.00</td>
+              </tr>
+            </table>
+          </center>
+        </p>
+        <span class="more">Mouse over the card for more info</span>
+      </div>
+    </div>
+
+    <div class="card green">
+      <div class="additional">
+        <div class="user-card">
+          <div class="level center">Report_id</div>
+          <div class="points center">Timestamp</div>
+          <!-- SVG replaced with an image -->
+          <img src="https://i.imgur.com/aWknMb5.jpg" alt="Teacher" class="center" style="width:110px;height:110px;">
+        </div>
+        <div class="more-info">
+          <h1 id="Patient_name">Patient_name</h1><br>
+          <div class="coords">
+            <span><strong> Doctor_id</strong></span>
+            <span>#doctor_id</span>
+          </div>
+          <div class="coords">
+            <span><strong>Discription</strong></span>
+            <span>He need to wear glass</span>
+          </div><br>
+          <div class="coords">
+            <span><strong>view Left_eye</strong></span>
+            <span><strong> View Right_eye</strong></span>
+          </div>
+          <div class="coords">
+            <span><a href="#"><i class="bi bi-eye-fill" style="font-size: x-large;"></i></a></span>
+            <span><a href="#"><i class="bi bi-eye-fill" style="font-size: x-large;"></i></a></span>
+          </div>
+          <div class="stats">
+            <div>
+              <div class="title">Email<br>report</div>
+              <a href="#"><i class="bi bi-envelope-fill"></i></a>
+            </div>
+            <div>
+              <div class="title">Custom<br>report</div>
+              <a href="#"><i class="bi bi-gear-fill"></i></a>
+            </div>
+            <div>
+              <div class="title">Download<br>report</div>
+              <a href="#"><i class="bi bi-download"></i></a>
+            </div>
+            <div>
+              <div class="title">Add_new<br>Test</div>
+              <a href="#"><i class="bi bi-journal-medical"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="general">
+          <h1 id="Patient_name">Patient_name</h1>
+        <p>
+          <center>
+            <table>
+              <tr>
+                <th>Left_eye:</th>
+                <td>+1.00</td>
+              </tr><br>
+              <tr>
+                <th>Right_eye:</th>
+                <td>+1.00</td>
+              </tr>
+            </table>
+          </center>
+        </p>
+        <span class="more">Mouse over the card for more info</span>
+      </div>
+    </div>
+
+    
+
+
+
+  </div>
+  <style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  width: 100%;
+  max-width: 400px; /* Adjust the maximum width as needed */
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Add a media query for smaller screens */
+@media screen and (min-width: 768px) {
+  .card {
+    width: 48%; /* Adjust the width based on your layout needs */
+  }
+}
+
+.card tr {
+  padding: 6px;
+}
+
+.card td {
+  padding: 6px;
+  border-radius: 4px;
+  background-color: aquamarine;
+}
+
+.card th {
+  padding: 6px;
+  border-radius: 4px;
+  background-color: #eab38f;
+}
+
+.card a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card a:hover,
+a:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card a {
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.card a:hover,
+a:focus {
+  transform: scale(1.1);
+}
+
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
+.card {
+  background: #FCEEB5;
+  font-family: Abel, Arial, Verdana, sans-serif;
+}
+
+.card .center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card {
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  background-color: #fff;
+  background: linear-gradient(#f8f8f8, #fff);
+  box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  margin: 1.5rem auto; /* Center the card */
+}
+
+.card h1 {
+  text-align: center;
+}
+
+.card .additional {
+  position: absolute;
+  width: 150px;
+  height: 100%;
+  background: linear-gradient(#dE685E, #EE786E);
+  transition: width 0.4s;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.card.green .additional {
+  background: linear-gradient(#92bCa6, #A2CCB6);
+}
+
+.card:hover .additional {
+  width: 100%;
+  border-radius: 0 5px 5px 0;
+}
+
+.card .additional .user-card {
+  width: 150px;
+  height: 100%;
+  position: relative;
+  float: left;
+}
+
+.card .additional .user-card::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10%;
+  right: -2px;
+  height: 80%;
+  border-left: 2px solid rgba(0, 0, 0, 0.025);
+}
+
+.card .additional .user-card .level,
+.card .additional .user-card .points {
+  top: 15%;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.15);
+  padding: 0.125rem 0.75rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.card .additional .user-card .points {
+  top: 85%;
+}
+
+.card .additional .user-card svg {
+  top: 50%;
+}
+
+.card .additional .more-info {
+  width: calc(100% - 150px); /* Adjust the width based on your layout needs */
+  float: left;
+  position: absolute;
+  left: 150px;
+  height: 100%;
+}
+
+.card .additional .more-info h1 {
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.card.green .additional .more-info h1 {
+  color: #224C36;
+}
+
+.card .additional .coords {
+  margin: 0 1rem;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.card.green .additional .coords {
+  color: #325C46;
+}
+
+.card .additional .coords span+span {
+  float: right;
+}
+
+.card .additional .stats {
+  font-size: 2rem;
+  display: flex;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  top: auto;
+  color: #fff;
+}
+
+.card.green .additional .stats {
+  color: #325C46;
+}
+
+.card .additional .stats>div {
+  flex: 1;
+  text-align: center;
+}
+
+.card .additional .stats i {
+  display: block;
+}
+
+.card .additional .stats div.title {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.card .additional .stats div.value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+}
+
+.card .additional .stats div.value.infinity {
+  font-size: 2.5rem;
+}
+
+.card .general {
+  width: 100%;
+  max-width: 300px; /* Adjust the maximum width based on your layout needs */
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: 1rem;
+  padding-top: 0;
+}
+
+.card .general .more {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 0.9em;
+}
+
+</style>
+
+<script>
+  function toggleDropdown(button) {
+    var dropdownContent = button.nextElementSibling;
+    dropdownContent.style.display = (dropdownContent.style.display === 'none' || dropdownContent.style.display === '') ? 'block' : 'none';
+  }
+</script>
+
+</body>
+</html>
